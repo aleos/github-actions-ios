@@ -1,0 +1,15 @@
+name: "🛠 Build Workflow"
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: 🛠 Build
+        run: |
+          xcodebuild
