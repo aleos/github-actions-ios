@@ -2,7 +2,7 @@
 //  AppApp.swift
 //  App
 //
-//  Created by Alexander Ostrovsky on 08.09.2022.
+//  Created by Alexander Ostrovsky on 10.09.2022.
 //
 
 import SwiftUI
