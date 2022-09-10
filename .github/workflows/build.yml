@@ -9,7 +9,9 @@ jobs:
   build:
     runs-on: macos-12
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out repository code
+        uses: actions/checkout@v3
       - name: 🛠 Build
         run: |
-          xcodebuild
+          xcode-select -s /Applications/Xcode_14.0.app
+          xcodebuild -configuration Debug
