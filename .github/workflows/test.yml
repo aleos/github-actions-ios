@@ -18,6 +18,7 @@ jobs:
             -scheme App \
             -destination "platform=iOS Simulator,name=iPhone 14 Pro" \
             build-for-testing
+            
       # - name: 🧪 Test
       #   run: |
       #     xcodebuild \
