@@ -40,8 +40,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "57F778BE28CD21CD00D4E90C"
@@ -49,14 +48,6 @@
                BlueprintName = "AppUITests"
                ReferencedContainer = "container:App.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "AppUITests/testLaunchPerformance()">
-               </Test>
-               <Test
-                  Identifier = "AppUITestsLaunchTests/testLaunch()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
