@@ -1,4 +1,5 @@
 name: "🧪 Test Workflow"
+on: [push]
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
@@ -10,7 +11,7 @@ env:
 jobs:
   test:
     name: "🛠 Build and 🧪 Test"
-    runs-on: macos-12
+    runs-on: macos-12 # there is also an option `macos-latest`
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -21,10 +22,10 @@ jobs:
             -scheme App \
             -destination "platform=iOS Simulator,name=iPhone 14 Pro" \
             build-for-testing
-      - name: 🧪 Test
-        run: |
-          xcodebuild \
-            -project App.xcodeproj \
-            -scheme App \
-            -destination "platform=iOS Simulator,name=iPhone 14 Pro" \
-            test-without-building
+      # - name: 🧪 Test
+      #   run: |
+      #     xcodebuild \
+      #       -project App.xcodeproj \
+      #       -scheme App \
+      #       -destination "platform=iOS Simulator,name=iPhone 14 Pro" \
+      #       test-without-building
