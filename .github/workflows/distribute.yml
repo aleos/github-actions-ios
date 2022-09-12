@@ -1,0 +1,18 @@
+name: 🚀 Distribute Workflow
+
+on:
+  push:
+    branches: [ $default-branch, github-actions-ios ]
+  pull_request:
+    branches: [ $default-branch ]
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_14.0.app/Contents/Developer
+
+jobs:
+  distribute:
+    name: 🚀 Distribute
+    runs-on: macos-12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
