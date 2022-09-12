@@ -16,12 +16,12 @@ jobs:
           xcodebuild \
             -project App.xcodeproj \
             -scheme App \
-            -destination "platform=iOS Simulator,name=iPhone 14 Pro" \
+            -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
             build-for-testing
       - name: 🧪 Test
         run: |
           xcodebuild \
             -project App.xcodeproj \
             -scheme App \
-            -destination "platform=iOS Simulator,name=iPhone 14 Pro" \
+            -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
             test-without-building
