@@ -54,11 +54,11 @@ jobs:
           curl -sL https://firebase.tools | bash
 
           # App ID from GoogleService-Info.plist
-          GOOGLE_APP_ID=1:488922612403:ios:6c9a9341c47ee8914f66c6
+          GOOGLE_APP_ID=1:873990114327:ios:40d53aa2956a563d09e052
 
           # Set env for Firebase tools authentication
           export GOOGLE_APPLICATION_CREDENTIALS=${RUNNER_TEMP}/google-service-account.json
-          
+
           # Import Google service account credentials from the secrets
           echo -n "${GOOGLE_APPLICATION_CREDENTIALS_BASE64}" | base64 --decode --output ${GOOGLE_APPLICATION_CREDENTIALS}
 
