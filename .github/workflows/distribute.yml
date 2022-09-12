@@ -10,8 +10,8 @@ jobs:
     runs-on: macos-12
     steps:
       - run: |
-        echo "github.run_id is ${{ github.run_id }}"
-        echo "github.run_number is ${{ github.run_number }}"
+          echo "github.run_id is ${{ github.run_id }}"
+          echo "github.run_number is ${{ github.run_number }}"
       - name: Checkout
         uses: actions/checkout@v3
       - name: 📜 Import certificate
