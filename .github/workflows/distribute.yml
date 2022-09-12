@@ -46,3 +46,23 @@ jobs:
             -archivePath ./build/App.xcarchive \
             -exportPath ./build \
             -exportOptionsPlist ExportOptions.plist
+      - name: 🦊 Upload to Firebase App Distribution
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
+        run: |
+          # Install Firebase CLI (https://firebase.google.com/docs/cli?authuser=1#mac-linux-auto-script)
+          curl -sL https://firebase.tools | bash
+
+          # App ID from GoogleService-Info.plist
+          GOOGLE_APP_ID=1:488922612403:ios:6c9a9341c47ee8914f66c6
+
+          # Set env for Firebase tools authentication
+          export GOOGLE_APPLICATION_CREDENTIALS=${RUNNER_TEMP}/google-service-account.json
+          
+          # Import Google service account credentials from the secrets
+          echo -n "${GOOGLE_APPLICATION_CREDENTIALS_BASE64}" | base64 --decode --output ${GOOGLE_APPLICATION_CREDENTIALS}
+
+          # Upload to Firebase App Distribution
+          firebase appdistribution:distribute ./build/App.ipa \
+            --app ${GOOGLE_APP_ID} \
+            --testers "thealeos@gmail.com"
