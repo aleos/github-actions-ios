@@ -12,14 +12,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: 🛠 Build
-        run: |
+        run: | # xcodebuild [-project <projectname>] -scheme <schemeName> [-destination <destinationspecifier>]... [-configuration <configurationname>] [-arch <architecture>]... [-sdk [<sdkname>|<sdkpath>]] [-showBuildSettings [-json]] [-showdestinations] [<buildsetting>=<value>]... [<buildaction>]...
           xcodebuild \
             -project App.xcodeproj \
             -scheme App \
             -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
             build-for-testing
       - name: 🧪 Test
-        run: |
+        run: | # xcodebuild [-project <projectname>] -scheme <schemeName> [-destination <destinationspecifier>]... [-configuration <configurationname>] [-arch <architecture>]... [-sdk [<sdkname>|<sdkpath>]] [-showBuildSettings [-json]] [-showdestinations] [<buildsetting>=<value>]... [<buildaction>]...
           xcodebuild \
             -project App.xcodeproj \
             -scheme App \
