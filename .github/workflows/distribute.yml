@@ -1,4 +1,4 @@
-name: "🚀 Distribute Workflow"
+name: 🚀 Distribute Workflow
 on: push
 
 env:
@@ -31,7 +31,7 @@ jobs:
           PROVISIONING_PROFILE_UUID=$(grep UUID -A1 -a ${PROVISIONING_PROFILE_PATH} | grep -io "[-A-Z0-9]\{36\}")
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp ${PROVISIONING_PROFILE_PATH} ~/Library/MobileDevice/Provisioning\ Profiles/${PROVISIONING_PROFILE_UUID}.mobileprovision
-        - name: 🏛 Archive
+      - name: 🏛 Archive
         run: |
           set -o pipefail && xcodebuild \
             -project App.xcodeproj \

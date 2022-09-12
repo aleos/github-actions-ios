@@ -1,4 +1,4 @@
-name: "🧪 Test Workflow"
+name: 🧪 Test Workflow
 on: push
 
 env:
@@ -6,7 +6,7 @@ env:
 
 jobs:
   test:
-    name: "🛠 Build and 🧪 Test"
+    name: 🛠 Build and 🧪 Test
     runs-on: macos-12
     steps:
       - name: Check out repository code
