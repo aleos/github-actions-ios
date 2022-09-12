@@ -1,5 +1,5 @@
 name: "🧪 Test Workflow"
-on: [push]
+on: push
 
 env:
   DEVELOPER_DIR: /Applications/Xcode_14.0.app/Contents/Developer
@@ -7,7 +7,7 @@ env:
 jobs:
   test:
     name: "🛠 Build and 🧪 Test"
-    runs-on: macos-12 # there is also an option `macos-latest`
+    runs-on: macos-12
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
