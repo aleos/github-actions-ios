@@ -18,10 +18,11 @@ jobs:
           echo 'github.event.pull_request.body'
           echo "${{ github.event.pull_request.body }}"
 
-          echo '==============================Changelog=============================='
-
           CHANGELOG=${RUNNER_TEMP}/CHANGELOG
 
           echo "#${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}" >> $CHANGELOG
           echo "" >> $CHANGELOG
           echo "${{ github.event.pull_request.body }}" >> $CHANGELOG
+
+          echo '==============================Changelog=============================='
+          cat $CHANGELOG
