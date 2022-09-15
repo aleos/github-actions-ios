@@ -3,6 +3,7 @@ on: pull_request
 
 jobs:
   debug:
+    runs-on: macos-12
     steps:
       - name: DEBUG Changelog
         run: |
