@@ -1,0 +1,27 @@
+name: 🧪 Test Workflow
+on: pull_request
+
+jobs:
+  debug:
+    steps:
+      - name: DEBUG Changelog
+        run: |
+          echo 'github.event.pull_request'
+          echo "${{ github.event.pull_request }}"
+
+          echo 'github.event'
+          echo "${{ github.event }}"
+
+          echo 'github.event_name'
+          echo "${{ github.event_name }}"
+
+          echo 'github.event.pull_request.body'
+          echo "${{ github.event.pull_request.body }}"
+
+          echo '==============================Changelog=============================='
+
+          CHANGELOG=${RUNNER_TEMP}/CHANGELOG
+
+          echo "#${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}" >> $CHANGELOG
+          echo "" >> $CHANGELOG
+          echo "${{ github.event.pull_request.body }}" >> $CHANGELOG
