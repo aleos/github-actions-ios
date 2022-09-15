@@ -1,4 +1,4 @@
-name: 🧪 Test Workflow
+name: 🐛 DEBUG Workflow
 on: pull_request
 
 jobs:
